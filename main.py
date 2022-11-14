@@ -43,7 +43,7 @@ def randomizeColors():
 def drawMap():
     for currentRect in map:
         #draw a rectangle?
-        pygame.draw.rect(screen,pygame.Color(0,0,255),currentRect)
+        pygame.draw.rect(screen,pygame.Color(randColor[0],randColor[1],randColor[2]),currentRect)
 
 def createMap1():
     #map.append(pygame.Rect(400,200,100,250))
@@ -311,8 +311,10 @@ while(not gameOver):
     if gameState == "start":
         checkStartScreenKeyPresses()
         drawStartScreen()
+        randomizeColors()
     if gameState == "end":
         checkEndScreenKeyPresses()
+        randomizeColors()
         drawEndScreen()
     if gameState == "playing":
         #player input
